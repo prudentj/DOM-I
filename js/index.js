@@ -40,3 +40,60 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+const ctaTextH = document.querySelector(".cta-text h1");
+ctaTextH.textContent= siteContent["cta"]["h1"] ;
+
+const ctaTextB = document.querySelector(".cta-text button");
+ctaTextB.textContent= siteContent["cta"]["button"] ;
+
+const ctaImg = document.getElementById("cta-img");
+ctaImg.setAttribute('src', siteContent["cta"][ "img-src"] )
+
+const middleImg = document.getElementById("middle-img");
+middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
+
+//Doing some one by one
+const textCont= document.querySelectorAll(".text-content");
+
+textCont[0].children[0].textContent=siteContent["main-content"]["features-h4"]
+textCont[0].children[1].textContent=siteContent["main-content"]["features-content"]
+textCont[1].children[0].textContent=siteContent["main-content"]["about-h4"]
+textCont[1].children[1].textContent=siteContent["main-content"]["about-content"]
+textCont[2].children[0].textContent=siteContent["main-content"]["services-h4"]
+textCont[2].children[1].textContent=siteContent["main-content"]["services-content"]
+textCont[3].children[0].textContent=siteContent["main-content"]["product-h4"]
+textCont[3].children[1].textContent=siteContent["main-content"]["product-content"]
+textCont[4].children[0].textContent=siteContent["main-content"]["vision-h4"]
+textCont[4].children[1].textContent=siteContent["main-content"]["vision-content"]
+
+
+const navbar = document.querySelectorAll("nav a");
+var count = 0;
+for (let item in siteContent["nav"]){
+  if (item != "img-src"){
+    navbar[count].textContent=siteContent["nav"][item];
+    navbar[count].style.color ='green';
+    count++;
+  }
+}
+const navbarParent =document.querySelector ("nav");
+const itemOne = document.createElement("a");
+const itemTwo = document.createElement("a");
+itemOne.textContent= "First Item";
+itemTwo.textContent="Last Item";
+navbarParent.prepend(itemOne);
+navbarParent.appendChild(itemTwo);
+
+
+//I need to figure out how to do this in a bit
+//navbar.forEach(element => {element.siteContent["nav"]["nav-item-1"];}
+const contact = document.querySelectorAll(".contact *");
+var count = 0;
+for (let item in siteContent["contact"]){
+    contact[count].textContent=siteContent["contact"][item];
+    count++;
+}
+
+const footer = document.querySelector("footer p");
+footer.textContent=siteContent["footer"]["copyright"];
